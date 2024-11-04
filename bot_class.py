@@ -12,7 +12,7 @@ class bot():
     def __init__(self):
         self.Bot_intents = ds.Intents.all()    #sets up bot intents  for information on intents check the discord documentation #intents set to all
         self.Bot = commands.Bot(command_prefix = "!", intents = self.Bot_intents)    #creates an instance of the bot client using the discord.ext framework check discord.py documentation 
-        self.token = "MTMwMjgyNDA2MjAwMjc5MDQ4Mw.GKgvVU.o19yAjCQrJRCsMx3466zr12kHiXDglZCFAmxH4" #MUDAR DEPOIS EXTREMAMENTE ERRADO FAZER SEM .ENV
+        self.token = self.load_token() #MUDAR DEPOIS EXTREMAMENTE ERRADO FAZER SEM .ENV
         
         @self.Bot.event
         async def on_ready():
